@@ -58,10 +58,10 @@ const StoreBoardArticle = ({ article, url }) => {
           </tr>
           <tr>
             <td colSpan={3} className="asdasd">
-              <MapContainer
+              {/* <MapContainer
                 store_address={article.store_address}
                 store_id={article.store_id}
-              />
+              /> */}
             </td>
           </tr>
         </table>

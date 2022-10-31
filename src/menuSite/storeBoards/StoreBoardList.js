@@ -109,12 +109,12 @@ const StoreBoardList = ({
             // state -1 구문
             return (
               <div className="chicken_tbl">
-                {/* <BoardArticle
+                <BoardArticle
                   url={url}
                   article={article}
                   key={article.store_id}
                   handlelist={handlelist}
-                /> */}
+                />
               </div>
             );
           })}
