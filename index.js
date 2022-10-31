@@ -2,6 +2,12 @@ const express = require("express");
 const mysql = require("mysql");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const multer = require("multer"); //파일 업로드
+const path = require("path"); //경로
+const fs = require("fs"); //파일다룰 수 있는 패키지
+const { parse } = require("path");
+require("dotenv").config();
+
 // cors
 // 교차 출처 리소스 공유
 // 한 출처에서 실행 중인 웹 애플리케이션이 다른 출처의 선택한 자원에
@@ -14,6 +20,7 @@ const PORT = process.env.port || 8008;
 // 포트 번호를 8008로 지정
 
 app.use(express.json());
+app.use(express.static(path.join(__dirname, "build")));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 let corsOptions = {
@@ -25,21 +32,16 @@ app.use(cors(corsOptions));
 // json 수정을 대신해서 안정적으로 설정할 수 있는 cors 설정
 
 const db = mysql.createPool({
-  host: "localhost",
-  user: "root",
-  password: "123456",
-  database: "project",
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB,
 });
 // MySQL 데이터 베이스에 접근해서 정보를 수정할 수 있는 설정
 
 // app.listen(PORT, () => {
 //   console.log(`Running on PORT ${PORT}`);
 // });
-
-const multer = require("multer"); //파일 업로드
-const path = require("path"); //경로
-const fs = require("fs"); //파일다룰 수 있는 패키지
-const { parse } = require("path");
 
 try {
   //업로드 폴더가 존재하는지 확인하고 없으면 업로드 폴더를 만든다.
@@ -84,6 +86,10 @@ app.post("/login", (req, res) => {
     //   res.send({ message: 'Fail' });
     // }
   });
+});
+
+app.get("/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
 app.post("/member", (req, res) => {
@@ -593,5 +599,6 @@ app.post("/totalprice", (req, res) => {
 //   });
 // });
 
-app.listen(PORT, () => {
-});
+const listener = app.listen(process.env.PORT || 3000, () => {
+  console.log('App is listening on port ' + listener.address().port)
+})
