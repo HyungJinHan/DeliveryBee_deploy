@@ -56,7 +56,7 @@ function StoreMain() {
   async function getList() {
     // alert('getList(actionMode) : ' + actionMode.mode);
     await axios
-      .post("http://localhost:8008/storecount", { url: url })
+      .post("https://deliverybee.herokuapp.com/storecount", { url: url })
       // get : url의 데이터 전달 방식을 지정한 것
       // (url에 요청 정보가 노출되는 위험이 있음)
       .then((res) => {
@@ -76,7 +76,7 @@ function StoreMain() {
       });
 
     await axios
-      .post("http://localhost:8008/storelist", {
+      .post("https://deliverybee.herokuapp.com/storelist", {
         page_num: page_num,
         page_size: page_size,
         article_count: article_count,

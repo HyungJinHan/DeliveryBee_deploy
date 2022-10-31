@@ -53,7 +53,7 @@ function StoreMenuMain() {
   async function getList() {
     // alert("getList(actionMode) =>" + actionMode.mode);
     await axios
-      .post("http://localhost:8008/menucount", {
+      .post("https://deliverybee.herokuapp.com/menucount", {
         menu_storeId: article.menu_storeId,
       })
       .then((res) => {
@@ -69,7 +69,7 @@ function StoreMenuMain() {
       });
 
     await axios
-      .post("http://localhost:8008/menulist", {
+      .post("https://deliverybee.herokuapp.com/menulist", {
         page_num: page_num,
         page_size: page_size,
         article_count: article_count,
@@ -95,7 +95,7 @@ function StoreMenuMain() {
     // 보드이미지 데이터를 상세보기에서 확인하기 위해서 보드이미지문장을 추가 해줘야한다.
     // alert("handleDetail(actionMode) =>" + actionMode.mode);
     axios
-      .post("http://localhost:8008/menudetail", {
+      .post("https://deliverybee.herokuapp.com/menudetail", {
         menu_name: e.target.id,
       })
       .then((res) => {
@@ -128,7 +128,7 @@ function StoreMenuMain() {
     //   "handleUpdateForm(actionMode) =>" + actionMode.mode + ", " + e.target.id
     // );
     axios
-      .post("http://localhost:8008/menudetail", {
+      .post("https://deliverybee.herokuapp.com/menudetail", {
         menu_num: e.target.id,
       })
       .then((res) => {
@@ -156,7 +156,7 @@ function StoreMenuMain() {
 
   const handleUpdate = () => {
     axios
-      .post("http://localhost:8008/menuupdate", {
+      .post("https://deliverybee.herokuapp.com/menuupdate", {
         article: article,
       })
       .then(() => {

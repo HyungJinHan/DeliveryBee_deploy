@@ -52,7 +52,7 @@ const CommentBoardArticle = ({
     }
 
     axios
-      .post("http://localhost:8008/minidelete", {
+      .post("https://deliverybee.herokuapp.com/minidelete", {
         comment_num: e.target.id,
         comment_userId: comment_userId,
       })

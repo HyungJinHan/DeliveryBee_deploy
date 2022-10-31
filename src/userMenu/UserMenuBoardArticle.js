@@ -31,11 +31,11 @@ const UserMenuBoardArticle = ({
     }
   };
 
-  const image = "http://localhost:8008/uploads/" + article.menu_pictureUrl;
+  const image = "https://deliverybee.herokuapp.com/uploads/" + article.menu_pictureUrl;
 
   const handleInsert = () => {
     axios
-      .post("http://localhost:8008/pay", {
+      .post("https://deliverybee.herokuapp.com/pay", {
         order_menuName: nameRef.current.value,
         order_boardNum: numberRef.current.value,
         order_userId: userIdRef.current.value,

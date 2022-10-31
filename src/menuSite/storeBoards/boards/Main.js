@@ -71,7 +71,7 @@ function Main() {
   async function getList() {
     // alert('getList(actionMode) : ' + actionMode.mode);
     await axios
-      .post("http://localhost:8008/count", { store_id: Article })
+      .post("https://deliverybee.herokuapp.com/count", { store_id: Article })
       // get : url의 데이터 전달 방식을 지정한 것
       // (url에 요청 정보가 노출되는 위험이 있음)
       .then((res) => {
@@ -91,7 +91,7 @@ function Main() {
       });
 
     await axios
-      .post("http://localhost:8008/list", {
+      .post("https://deliverybee.herokuapp.com/list", {
         page_num: page_num,
         page_size: page_size,
         article_count: article_count,
@@ -119,7 +119,7 @@ function Main() {
   // 상세보기
   const handleDetail = (e) => {
     axios
-      .post("http://localhost:8008/detail", { num: e.target.id })
+      .post("https://deliverybee.herokuapp.com/detail", { num: e.target.id })
       // post : url의 데이터 전달 방식을 지정한 것
       // (url에 요청 정보를 숨김)
       .then((res) => {
@@ -151,7 +151,7 @@ function Main() {
   // 수정폼 보기
   const handleUpdateForm = (e) => {
     axios
-      .post("http://localhost:8008/detail", { num: e.target.id })
+      .post("https://deliverybee.herokuapp.com/detail", { num: e.target.id })
       .then((res) => {
         const { data } = res;
         if (res.data.length > 0) {
@@ -180,7 +180,7 @@ function Main() {
 
   const handleUpdate = () => {
     axios
-      .post("http://localhost:8008/update", {
+      .post("https://deliverybee.herokuapp.com/update", {
         article: article,
       })
       .then(() => {

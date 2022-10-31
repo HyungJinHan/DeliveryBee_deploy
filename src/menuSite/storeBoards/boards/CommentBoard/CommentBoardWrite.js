@@ -86,7 +86,7 @@ const CommentBoardWrite = ({
     }
 
     axios
-      .post("http://localhost:8008/miniinsert", {
+      .post("https://deliverybee.herokuapp.com/miniinsert", {
         comment_name: nameRef.current.value,
         comment_content: contentRef.current.value,
         comment_price: priceRef.current.value,

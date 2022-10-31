@@ -25,9 +25,9 @@ const Kakao = ({
       total_amount: sum,
       var_amount: 200,
       tax_free_amount: 0,
-      approval_url: "http://localhost:3000/payloading",
-      fail_url: "http://localhost:3000/payloading",
-      cancel_url: "http://localhost:3000/payloading",
+      approval_url: "https://deliverybee.herokuapp.com/payloading",
+      fail_url: "https://deliverybee.herokuapp.com/payloading",
+      cancel_url: "https://deliverybee.herokuapp.com/payloading",
     },
   });
 
@@ -45,7 +45,7 @@ const Kakao = ({
       const {
         data: { next_redirect_pc_url, tid },
       } = response;
-      
+
       setUrldata({ next_redirect_pc_url, tid, params });
     });
   }, []);

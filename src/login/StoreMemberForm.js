@@ -219,7 +219,7 @@ const StoreMemberForm = () => {
     }
 
     axios
-      .post("http://localhost:8008/storemember", {
+      .post("https://deliverybee.herokuapp.com/storemember", {
         store_id: idRef.current.value,
         store_pw: pwRef.current.value,
         store_name: nameRef.current.value,

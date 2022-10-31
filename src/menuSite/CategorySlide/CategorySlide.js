@@ -34,52 +34,52 @@ export default function CategorySlide() {
         className="mySwiper"
       >
         <SwiperSlide>
-          <a href="http://localhost:3000/main/chicken">
+          <a href="https://deliverybee.herokuapp.com/main/chicken">
             <img src={chicken} alt="#" />
           </a>
         </SwiperSlide>
         <SwiperSlide>
-          <a href="http://localhost:3000/main/burger">
+          <a href="https://deliverybee.herokuapp.com/main/burger">
             <img src={burger} alt="pizza"></img>
           </a>
         </SwiperSlide>
         <SwiperSlide>
-          <a href="http://localhost:3000/main/pizza">
+          <a href="https://deliverybee.herokuapp.com/main/pizza">
             <img src={pizza} alt="pizza"></img>
           </a>
         </SwiperSlide>
         <SwiperSlide>
-          <a href="http://localhost:3000/main/korean">
+          <a href="https://deliverybee.herokuapp.com/main/korean">
             <img src={kfood} alt="#" />
           </a>
         </SwiperSlide>
         <SwiperSlide>
-          <a href="http://localhost:3000/main/sandwitch">
+          <a href="https://deliverybee.herokuapp.com/main/sandwitch">
             <img src={sandwich} alt="#" />
           </a>
         </SwiperSlide>
         <SwiperSlide>
-          <a href="http://localhost:3000/main/chinese">
+          <a href="https://deliverybee.herokuapp.com/main/chinese">
             <img src={chinese} alt="#" />
           </a>
         </SwiperSlide>
         <SwiperSlide>
-          <a href="http://localhost:3000/main/japanese">
+          <a href="https://deliverybee.herokuapp.com/main/japanese">
             <img src={japan} alt="#" />
           </a>
         </SwiperSlide>
         <SwiperSlide>
-          <a href="http://localhost:3000/main/dessert">
+          <a href="https://deliverybee.herokuapp.com/main/dessert">
             <img src={dessert} alt="#" />
           </a>
         </SwiperSlide>
         <SwiperSlide>
-          <a href="http://localhost:3000/main/cafe">
+          <a href="https://deliverybee.herokuapp.com/main/cafe">
             <img src={cafe} alt="#" />
           </a>
         </SwiperSlide>
         <SwiperSlide>
-          <a href="http://localhost:3000/main/porkfood">
+          <a href="https://deliverybee.herokuapp.com/main/porkfood">
             <img src={porkfood} alt="#" />
           </a>
         </SwiperSlide>

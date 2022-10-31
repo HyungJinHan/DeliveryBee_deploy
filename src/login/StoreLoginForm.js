@@ -30,7 +30,7 @@ const StoreLoginForm = () => {
     }
 
     axios
-      .post("http://localhost:8008/storelogin", {
+      .post("https://deliverybee.herokuapp.com/storelogin", {
         store_id: idRef.current.value,
         store_pw: pwRef.current.value,
       })

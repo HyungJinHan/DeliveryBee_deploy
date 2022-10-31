@@ -1,5 +1,5 @@
 const StoreMenuBoardDetail = ({ article, handlelist }) => {
-  const image = "http://localhost:8008/uploads/" + article.menu_pictureUrl; //실제 업로드 된 파일의 위치를 확인할 수 있다.
+  const image = "https://deliverybee.herokuapp.com/uploads/" + article.menu_pictureUrl; //실제 업로드 된 파일의 위치를 확인할 수 있다.
   // 이미지 경로를 설정한다. 서버에 8008번인데 업로드스폴드
   return (
     <div>

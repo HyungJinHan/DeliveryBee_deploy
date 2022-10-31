@@ -171,7 +171,7 @@ const MemberForm = () => {
     }
 
     axios
-      .post("http://localhost:8008/member", {
+      .post("https://deliverybee.herokuapp.com/member", {
         user_id: idRef.current.value,
         user_pw: pwRef.current.value,
         user_name: nameRef.current.value,

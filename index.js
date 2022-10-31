@@ -16,8 +16,6 @@ require("dotenv").config();
 // 교차 출처 HTTP 요청을 실행
 
 const app = express();
-const PORT = process.env.port || 8008;
-// 포트 번호를 8008로 지정
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "build")));

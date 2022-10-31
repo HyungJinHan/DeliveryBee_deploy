@@ -54,7 +54,7 @@ const BoardArticle = ({
           return false;
         }
         axios
-          .post("http://localhost:8008/delete", {
+          .post("https://deliverybee.herokuapp.com/delete", {
             num: e.target.id,
           })
           .then(() => {
@@ -77,7 +77,7 @@ const BoardArticle = ({
           return false;
         }
         axios
-          .post("http://localhost:8008/delete", {
+          .post("https://deliverybee.herokuapp.com/delete", {
             num: e.target.id,
           })
           .then(() => {

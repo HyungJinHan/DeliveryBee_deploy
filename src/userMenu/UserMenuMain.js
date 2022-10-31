@@ -53,7 +53,7 @@ function UserMenuMain({
     }
 
     axios
-      .post("http://localhost:8008/deliveryfee", {
+      .post("https://deliverybee.herokuapp.com/deliveryfee", {
         store_id: articleId,
       })
       .then((res) => {
@@ -66,7 +66,7 @@ function UserMenuMain({
   }, []);
 
   axios
-    .post("http://localhost:8008/totalprice", {
+    .post("https://deliverybee.herokuapp.com/totalprice", {
       order_userId: window.sessionStorage.getItem("id"),
       order_boardNum: number,
     })
@@ -87,7 +87,7 @@ function UserMenuMain({
   async function getList() {
     // alert("getList(actionMode) =>" + actionMode.mode);
     await axios
-      .post("http://localhost:8008/usermenucount", { store_id: articleId })
+      .post("https://deliverybee.herokuapp.com/usermenucount", { store_id: articleId })
       .then((res) => {
         const { data } = res;
         article_count = data[0].COUNT;
@@ -101,7 +101,7 @@ function UserMenuMain({
       });
 
     await axios
-      .post("http://localhost:8008/usermenulist", {
+      .post("https://deliverybee.herokuapp.com/usermenulist", {
         page_num: page_num,
         page_size: page_size,
         article_count: article_count,
@@ -121,7 +121,7 @@ function UserMenuMain({
   async function getOrderList() {
     // alert("getList(actionMode) =>" + actionMode.mode);
     await axios
-      .post("http://localhost:8008/ordercount", {
+      .post("https://deliverybee.herokuapp.com/ordercount", {
         board_num: number,
         user_id: window.sessionStorage.getItem("id"),
       })
@@ -138,7 +138,7 @@ function UserMenuMain({
       });
 
     await axios
-      .post("http://localhost:8008/orderlist", {
+      .post("https://deliverybee.herokuapp.com/orderlist", {
         page_num: page_num,
         page_size: page_size,
         article_count: article_count,
@@ -162,7 +162,7 @@ function UserMenuMain({
     // 보드이미지 데이터를 상세보기에서 확인하기 위해서 보드이미지문장을 추가 해줘야한다.
     // alert("handleDetail(actionMode) =>" + actionMode.mode);
     axios
-      .post("http://localhost:8008/menudetail", {
+      .post("https://deliverybee.herokuapp.com/menudetail", {
         menu_name: e.target.id,
       })
       .then((res) => {
@@ -195,7 +195,7 @@ function UserMenuMain({
     //   "handleUpdateForm(actionMode) =>" + actionMode.mode + ", " + e.target.id
     // );
     axios
-      .post("http://localhost:8008/menudetail", {
+      .post("https://deliverybee.herokuapp.com/menudetail", {
         menu_num: e.target.id,
       })
       .then((res) => {

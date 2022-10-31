@@ -9,11 +9,11 @@ const StoreMenuBoardArticle = ({
   handledetail,
   handleupdateform,
 }) => {
-  const image = "http://localhost:8008/uploads/" + article.menu_pictureUrl;
+  const image = "https://deliverybee.herokuapp.com/uploads/" + article.menu_pictureUrl;
 
   const handleDelete = (e) => {
     axios
-      .post("http://localhost:8008/menudelete", {
+      .post("https://deliverybee.herokuapp.com/menudelete", {
         menu_name: e.target.id,
       })
       .then(() => {

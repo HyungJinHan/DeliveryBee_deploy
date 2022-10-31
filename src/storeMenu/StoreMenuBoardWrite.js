@@ -57,7 +57,7 @@ const StoreMenuBoardWrite = ({ handlelist }) => {
     axios
       .post(
         // 파일 첨부할 떄 배열로 첨부한 이미지 파일을  이.타겟.파일이름을 가져오기로 설정해야 가져온다.
-        "http://localhost:8008/menuinsert",
+        "https://deliverybee.herokuapp.com/menuinsert",
         {
           menu_storeId: storeIdRef.current.value,
           menu_pictureUrl: image_name,
@@ -70,7 +70,7 @@ const StoreMenuBoardWrite = ({ handlelist }) => {
       //   headers: {
       //     "Content-Type": "multipart/form-data",
       //   },
-      //   url: "http://localhost:8008/insert", // 파일 업로드 요청 URL
+      //   url: "https://deliverybee.herokuapp.com/insert", // 파일 업로드 요청 URL
       //   method: "POST",
       //   data: { //어팬드를 사용해서 이렇게 사용하는 방식도 존재한다. Line 52~54
       //     title: titleRef.current.value,

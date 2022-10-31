@@ -29,7 +29,7 @@ const CommentBoardWriteNoOrder = ({ handlelist, number, articleId }) => {
     }
 
     axios
-      .post("http://localhost:8008/deliveryfee", {
+      .post("https://deliverybee.herokuapp.com/deliveryfee", {
         store_id: articleId,
       })
       .then((res) => {
@@ -42,7 +42,7 @@ const CommentBoardWriteNoOrder = ({ handlelist, number, articleId }) => {
   }, []);
 
   axios
-    .post("http://localhost:8008/totalprice", {
+    .post("https://deliverybee.herokuapp.com/totalprice", {
       order_userId: window.sessionStorage.getItem("id"),
       order_boardNum: number,
     })
@@ -99,7 +99,7 @@ const CommentBoardWriteNoOrder = ({ handlelist, number, articleId }) => {
     // }
 
     axios
-      .post("http://localhost:8008/miniinsert", {
+      .post("https://deliverybee.herokuapp.com/miniinsert", {
         comment_name: nameRef.current.value,
         comment_content: contentRef.current.value,
         comment_price: priceRef.current.value,

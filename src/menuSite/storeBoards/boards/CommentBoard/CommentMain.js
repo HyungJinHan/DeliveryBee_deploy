@@ -59,7 +59,7 @@ function CommentMain({
     }
 
     axios
-      .post("http://localhost:8008/deliveryfee", {
+      .post("https://deliverybee.herokuapp.com/deliveryfee", {
         store_id: articleId,
       })
       .then((res) => {
@@ -72,7 +72,7 @@ function CommentMain({
   }, []);
 
   // axios
-  //   .post("http://localhost:8008/feedivide", {
+  //   .post("https://deliverybee.herokuapp.com/feedivide", {
   //     order_userId: window.sessionStorage.getItem("id"),
   //     order_boardNum: number
   //   })
@@ -96,7 +96,7 @@ function CommentMain({
   async function getList() {
     // alert('getList(actionMode) : ' + actionMode.mode);
     await axios
-      .post("http://localhost:8008/minicount", { number: number })
+      .post("https://deliverybee.herokuapp.com/minicount", { number: number })
       // get : url의 데이터 전달 방식을 지정한 것
       // (url에 요청 정보가 노출되는 위험이 있음)
       .then((res) => {
@@ -119,7 +119,7 @@ function CommentMain({
       });
 
     await axios
-      .post("http://localhost:8008/minilist", {
+      .post("https://deliverybee.herokuapp.com/minilist", {
         page_num: page_num,
         page_size: page_size,
         article_count: article_count,
@@ -143,7 +143,7 @@ function CommentMain({
   async function getListNoOrder() {
     // alert('getList(actionMode) : ' + actionMode.mode);
     await axios
-      .post("http://localhost:8008/minicount", { number: number })
+      .post("https://deliverybee.herokuapp.com/minicount", { number: number })
       // get : url의 데이터 전달 방식을 지정한 것
       // (url에 요청 정보가 노출되는 위험이 있음)
       .then((res) => {
@@ -163,7 +163,7 @@ function CommentMain({
       });
 
     await axios
-      .post("http://localhost:8008/minilist", {
+      .post("https://deliverybee.herokuapp.com/minilist", {
         page_num: page_num,
         page_size: page_size,
         article_count: article_count,
@@ -184,7 +184,7 @@ function CommentMain({
   const handleDetail = (e) => {
     // alert('handleDetail(actionMode) : ' + actionMode.mode);
     axios
-      .post("http://localhost:8008/detail", { num: e.target.id })
+      .post("https://deliverybee.herokuapp.com/detail", { num: e.target.id })
       // post : url의 데이터 전달 방식을 지정한 것
       // (url에 요청 정보를 숨김)
       .then((res) => {
@@ -215,7 +215,7 @@ function CommentMain({
   const handleUpdateForm = (e) => {
     // alert('handleUpdateForm(actionMode) : ' + actionMode.mode + ', ' + e.target.id);
     axios
-      .post("http://localhost:8008/minidetail", { comment_num: e.target.id })
+      .post("https://deliverybee.herokuapp.com/minidetail", { comment_num: e.target.id })
       .then((res) => {
         const { data } = res;
         if (res.data.length > 0) {
@@ -241,7 +241,7 @@ function CommentMain({
 
   const handleUpdate = () => {
     axios
-      .post("http://localhost:8008/miniupdate", {
+      .post("https://deliverybee.herokuapp.com/miniupdate", {
         article: article,
       })
       .then(() => {

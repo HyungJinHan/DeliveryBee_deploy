@@ -93,7 +93,7 @@ const BoardWrite = ({
     }
 
     axios
-      .post("http://localhost:8008/insert", {
+      .post("https://deliverybee.herokuapp.com/insert", {
         title: titleRef.current.value,
         writer: window.sessionStorage.getItem("id"),
         content: contentRef.current.value,
